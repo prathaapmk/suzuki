@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/msil" mode="merge"/>
+    <filter root="/content/msil" mode="merge"/>
+    <filter root="/content/dam/msil" mode="merge">
+        <exclude pattern="/content/dam/msil(/.*)?"/>
+        <include pattern="/content/dam/msil/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/msil/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/msil" mode="merge"/>
+</workspaceFilter>
