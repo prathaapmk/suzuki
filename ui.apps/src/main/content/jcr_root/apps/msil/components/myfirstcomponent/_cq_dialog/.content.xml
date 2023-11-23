@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="My First Component Dialog"
     sling:resourceType="cq/gui/components/authoring/dialog">
@@ -16,8 +16,10 @@
                     <text
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        autocomplete="off"
                         fieldDescription="The text to display on the button."
                         fieldLabel="Text"
+                        maxlength="{Long}5"
                         name="./jcr:title"
                         required="{Boolean}true"/>
                     <number
@@ -25,14 +27,106 @@
                         sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
                         fieldDescription="The text to display on the button."
                         fieldLabel="Number"
-                        name="./name"/>
+                        max="{Long}100"
+                        min="{Long}10"
+                        name="./number"/>
                     <checkboxfield
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        checked="true"
                         fieldDescription="The text to display on the button."
-                        fieldLabel="Checkbox"
                         name="./checkboxfield"
-                        text="Checbox"/>
+                        text="Checbox vai text Prop"
+                        uncheckedValue="false"
+                        value="{Boolean}true"/>
+                    <text2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/hidden"
+                        autocomplete="off"
+                        fieldDescription="The text to display on the button."
+                        fieldLabel="Text 2"
+                        name="./jcr:title1"
+                        required="{Boolean}true"
+                        rows="{Long}11"
+                        value="HeY Testing Value Field"/>
+                    <pathbrowseradding
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/pathfield"
+                        autocomplete="off"
+                        fieldDescription="The text to display on the button."
+                        fieldLabel="Text"
+                        name="./pathbrowseradding"
+                        required="{Boolean}true"
+                        rootPath="/content/msil"/>
+                    <sampledate
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                        displayedFormat="MM DD, YYYY hh:mm a"
+                        displayTimezoneMessage="{Boolean}true"
+                        fieldLabel="Off Time"
+                        minDate="11/23/2023"
+                        name="./sampleDate"
+                        renderReadOnly="{Boolean}true"
+                        required="{Boolean}true"
+                        type="date"/>
+                    <file
+                        granite:class="cmp-image__editor-file-upload"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                        class="cq-droptarget"
+                        enableNextGenDynamicMedia="{Boolean}true"
+                        fileNameParameter="./fileName"
+                        fileReferenceParameter="./fileReference"
+                        mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                        name="./file"/>
+                    <pageImageThumbnail
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="core/wcm/components/commons/editor/dialog/pageimagethumbnail/v1/pageimagethumbnail"/>
+                    <testfield
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Mutli Field Checking"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                        <items jcr:primaryType="nt:unstructured">
+                            <vanitypath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                fieldLabel="Vanity URL"
+                                renderReadOnly="{Boolean}true">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    name="./sling:vanityPath"
+                                    required="{Boolean}true"/>
+                            </vanitypath>
+                        </items>
+                    </testfield>
+                    <universalPages
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="true"
+                        fieldLabel="Universal Menu">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Universal Link"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                            name="./universalPages">
+                            <items jcr:primaryType="nt:unstructured">
+                                <title
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Page title"
+                                    name="linkTitle"
+                                    required="{Boolean}true"/>
+                                <path
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                    fieldLabel="Page path or URL"
+                                    name="linkPath"
+                                    required="{Boolean}true"
+                                    rootPath="/content"/>
+                            </items>
+                        </field>
+                    </universalPages>
                 </items>
             </properties>
         </items>
