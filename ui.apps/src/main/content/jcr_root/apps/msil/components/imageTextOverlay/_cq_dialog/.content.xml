@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Image OverLay"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        granite:class="cmp-image__editor"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <centercontent
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Center Content"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <ctatext
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="centertext"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="CTA Text"
+                                                name="./ctatext"/>
+                                            <ctalink
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="centertext"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="CTA Link"
+                                                name="./ctaLink"/>
+                                            <target
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="centertext"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="If checked the link will be opened in a new browser tab."
+                                                name="./linkTarget"
+                                                text="Open link in new tab"
+                                                uncheckedValue="_self"
+                                                value="_blank"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </centercontent>
+                    <leftsidecontent
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Left Content Side"
+                        sling:hideChildren="*"
+                        sling:hideResource="{Boolean}true"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true"/>
+                    <imageandtitle
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Image and Title Properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <image
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:hideProperties="[fieldDescription]"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Select the image"
+                                                fieldLabel="Image Path"
+                                                name="./image"
+                                                rootPath="/content/dam"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </imageandtitle>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
