@@ -340,6 +340,51 @@
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy>
             </page>
+            <imagetext jcr:primaryType="nt:unstructured">
+                <image-text-policy001
+                    jcr:lastModified="{Date}2023-12-04T08:06:25.329+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Image Text Policy 001"
+                    sling:resourceType="wcm/core/components/policy/policy">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0
+                            cq:styleGroupLabel="Image Alingment"
+                            cq:styleGroupMultiple="true"
+                            jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="imag-alingment-background-break"
+                                    cq:styleId="1701656845098"
+                                    cq:styleLabel="Full Back Break Out"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item1
+                                    cq:styleClasses="mobile-padding-20px"
+                                    cq:styleId="1701657252856"
+                                    cq:styleLabel="Mobile Padding"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                        <item1
+                            cq:styleGroupLabel="To Left text Props"
+                            jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="text-border-red"
+                                    cq:styleId="1701657282240"
+                                    cq:styleLabel="Border red"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item1
+                                    cq:styleClasses="text-left-20px"
+                                    cq:styleId="1701657293779"
+                                    cq:styleLabel="left 20 px"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item1>
+                    </cq:styleGroups>
+                </image-text-policy001>
+            </imagetext>
         </components>
     </msil>
     <wcm jcr:primaryType="nt:unstructured">
