@@ -1,46 +1,9 @@
-<style>
-.container {
-  position: relative;
-  text-align: center;
-  color: white;
-}
+<sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.all @ categories='msil.apps.imageText'}"/>
+</sly>
 
-.bottom-left {
-  position: absolute;
-  bottom: 8px;
-  left: 16px;
-}
-
-.top-left {
-  position: absolute;
-  top: 8px;
-  left: 16px;
-}
-
-.top-right {
-  position: absolute;
-  top: 8px;
-  right: 16px;
-}
-
-.bottom-right {
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
-}
-
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-</style>
-</head>
-<body>
-
-<h2>${properties.title}</h2>
-
+<h2>${pageProperties.navTitle || properties.title}</h2>
+<sly data-sly-use.button="/apps/msil/components/slytemplate/cta-template.html"/>
 <div class="container">
   <img src="${properties.image}" alt="Snow" style="width:100%;">
   <div class="bottom-left">${properties.bottomLeftText}</div>
@@ -49,5 +12,10 @@
   <div class="bottom-right"> ${properties.bottomRightText}</div>
   <div class="centered">${properties.centerText}</div>
 </div>
+
+
+<div data-sly-call="${button.ctaButton @ text='GMAIL', url='https://www.gmail.com', target='_self'}">
+
+
 
 
