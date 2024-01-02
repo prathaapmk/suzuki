@@ -1,0 +1,25 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></div>
+
+
+
+
+
+<sly data-sly-use.imageButtonsModel="com.adobe.aem.msil.core.models.ImagewithButtonsModel"/>
+<h2>${imageButtonsModel.title}</h2>
+
+<div class="container">
+<div>Array of Strings
+<ul data-sly-list="${imageButtonsModel.vanityPath}">
+<li>${item}
+</li>
+</ul>
+</div>
+  <img src="${imageButtonsModel.image}" alt="Snow" style="width:100%">
+  <div class="btns" data-sly-list.buttons=${imageButtonsModel.buttonProps} data-sly-use.obj="${'com.adobe.aem.msil.core.models.TitleHelper' @pageUrl='/content/msil/us/en/testing-sling-model-with-fe'}">
+  <a  title="${obj.title}" class="btn${buttonsList.count}" href="${buttons.ctaLink}">${buttons.ctaTitle}</a>
+  </div>
+</div>
+
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !imageButtonsModel.image}"></sly>
+
