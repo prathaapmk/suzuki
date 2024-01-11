@@ -27,12 +27,20 @@ import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.component.propertytypes.ServiceRanking;
 
+import com.adobe.aem.msil.core.services.PracticeService;
+import com.adobe.aem.msil.core.services.ReadOSGICOnfig;
+import com.adobe.aem.msil.core.services.SampleService;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 
+import lombok.Getter;
+
 import java.util.Optional;
 
+@Getter
 @Model(adaptables = Resource.class)
 public class HelloWorldModel {
 
@@ -44,8 +52,22 @@ public class HelloWorldModel {
     private Resource currentResource;
     @SlingObject
     private ResourceResolver resourceResolver;
+    
+    private String myText;
 
     private String message;
+    
+    @OSGiService(filter = "(component.name=com.adobe.aem.msil.core.services.impl.SampleService2Impl)") // @Inject
+    SampleService sampleService;
+    
+    @OSGiService
+    ReadOSGICOnfig readOsgi;
+    
+    @OSGiService
+    PracticeService practiceservice;
+    
+    private String paymentGatewayinslingModel;
+    
 
     @PostConstruct
     protected void init() {
@@ -53,6 +75,9 @@ public class HelloWorldModel {
         String currentPagePath = Optional.ofNullable(pageManager)
                 .map(pm -> pm.getContainingPage(currentResource))
                 .map(Page::getPath).orElse("");
+        myText= practiceservice.getSomeString();
+        paymentGatewayinslingModel= readOsgi.getPaymentfromService();
+        		//sampleService.getName();
 
         message = "Hello World!\n"
             + "Resource type is: " + resourceType + "\n"
@@ -62,5 +87,11 @@ public class HelloWorldModel {
     public String getMessage() {
         return message;
     }
+
+	public String getPaymentGatewayinslingModel() {
+		return paymentGatewayinslingModel;
+	}
+    
+    
 
 }
