@@ -1,0 +1,5 @@
+// Configuration created by Apache Sling JCR Installer
+{
+  "getName":"Hey i am Learning OSGi Configs in AEM",
+   "getPaymentGateway":"http://www.paymentgateway.com"
+}
