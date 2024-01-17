@@ -2,5 +2,7 @@
 <workspaceFilter version="1.0">
     <filter root="/apps/msil/clientlibs"/>
     <filter root="/apps/msil/components"/>
-    <filter root="/apps/msil/i18n"/>
+     <filter root="/apps/msil/i18n"/>
+	<filter root="/apps/msil/templates"/>
+<filter root="/apps/msil/statictemplates"/>	
 </workspaceFilter>

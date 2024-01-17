@@ -8,4 +8,7 @@
     </filter>
     <filter root="/content/dam/msil/asset.jpg" mode="merge"/>
     <filter root="/content/experience-fragments/msil" mode="merge"/>
+     <filter root="/var/workflow" mode="merge"/>
+     <filter root="/conf/global" mode="merge"/>
+    
 </workspaceFilter>
